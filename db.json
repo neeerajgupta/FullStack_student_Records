@@ -1,0 +1,24 @@
+{
+    "signinusers": [
+        {
+            "name": "Durga Prasad",
+            "email": "annusahu45601@gmail.com",
+            "password":"7084133523"
+        },
+        {
+            "name": "abc",
+            "email": "abc@gmail.com",
+            "password":"abc123"
+        },
+        {
+            "name": "ab",
+            "email": "ab@gmail.com",
+            "password":"ab123"
+        },
+        {
+            "name": "a",
+            "email": "a@gmail.com",
+            "password":"a123"
+        }
+    ]
+}

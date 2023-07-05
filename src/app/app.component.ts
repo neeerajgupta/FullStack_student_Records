@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { ParkingComponent } from './parking/parking.component';
+import { SearchDeleteComponent } from './search-delete/search-delete.component';
+import { RegistrationComponent } from './registration/registration.component';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +11,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Stdent-Rigistration';
+ 
+  
+  
 }

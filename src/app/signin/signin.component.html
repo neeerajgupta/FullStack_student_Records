@@ -1,0 +1,46 @@
+<div class="main">
+    <div class="navbar">
+        <div class="icon">
+            <h2 class="logo">All-Works</h2>
+        </div>
+
+        <div class="menu">
+            
+        </div>
+
+        <div class="search">
+            <input class="srch" type="search" name="" placeholder="Type To text">
+            <a href="#"> <button class="btn">Search</button></a>
+        </div>
+
+    </div>
+    <div class="content">
+        <h1>Web Design & <br><span>Development</span> <br>Course</h1>
+        <p class="par">Website development and website design almost seem like
+     two children of the same mother <br> However, they are not identical twins. So, while you will find a similarity or two between them
+            <br>  they are largely different from one another. In this article, we’ll teach you about what web design and web development is, and how both of them differentiate from each other. 
+        </p>
+
+        <button class="cn"type="submit"
+        onclick="window.location.href = 'https:/www.linkedin.com/in/neeraj-gupta-9ab41a26a';">ABOUT-ME</button>
+
+
+        <div class="form">
+            <form [formGroup]="loginForm" (ngSubmit)="logindata()">
+                <h2>SignIn Here</h2>
+
+                <input type="email" formControlName="email" name="ema" id="email" placeholder="Enter Email Here">
+
+                <input type="password" formControlName="password" name="pass" id="password"
+                    placeholder="Enter Password Here">
+
+                <button class="btnn" type="submit"  (click)="logindata()" type="button">Login</button>
+            </form>
+            <p class="link"><br>
+                <a routerLink="/signup">Already i've account Sign up </a> here
+            </p>
+
+
+        </div>
+    </div>
+</div>

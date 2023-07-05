@@ -1,0 +1,62 @@
+
+<div class="background">
+    <h1>Search Student With NAME!!!!</h1>
+<div class="container">
+
+    <div class="row">
+        <div id="custom-search-input">
+                         <div class="input-group col-md-12" style="text-align: center">
+                             <input type="text" class="search-query form-control" placeholder="Search With NAme "name="name" [(ngModel)]="name">
+                           
+                             <span class="input-group-btn">
+                                 <button class="btn btn-danger" type="button" (click)="searchclick()">
+                                     <span class=" glyphicon glyphicon-search"></span>
+                                     search
+                                  </button>
+                             </span>
+                          </div>
+        </div>
+
+     </div>
+
+     <!-- class="table table-dark table-striped" -->
+    <table class="table  table-striped"> 
+        <thead>
+            <tr> 
+                <th>Rollno</th>
+                <th>NAMe</th>
+                <th>Subject</th>
+                <th>Email</th>
+                <th>MobileNo</th>
+                <th>Action</th>
+               
+            </tr>
+        
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students | paginate: {itemsPerPage : 5 ,currentPage:p}">
+                <td>  {{student.rollno}}      </td>
+                <td>   {{student.name}}  </td>
+                <td>   {{student.subjec}}    </td>
+                <td>   {{student.email}}     </td>
+                <td>   {{student.mobno}}    </td>
+                <td> <button (click)="onClick(student.rollno)" class="btn btn-danger"><i class="material-icons">delete</i></button></td>
+                </tr>
+        
+        </tbody>
+        <tfoot class="paganation" >
+            <tr>
+                <td colspan="5">
+                    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+    
+                </td>
+                <td><i class="fa fa-copyright" aria-hidden="true"></i></td>
+            </tr>
+        </tfoot>
+       
+        </table>
+        
+</div>
+</div>
+
+

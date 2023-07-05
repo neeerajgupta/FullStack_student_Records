@@ -1,0 +1,144 @@
+<p>parking works!</p>
+
+<h2>Parking Rigistration Form!!</h2>
+<div style="text-align: center">
+    <h1>{{message}}</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-15">
+            <form>
+                <fieldset>
+                    <div class="form-group">
+                        <label> Name</label>
+                        <input class="form-control" type="text" name="name" id="name" [(ngModel)]="parking.name">
+                    </div>
+                    <div class="form-group">
+                        <label> License_Plate</label>
+                        <input class="form-control" type="text" name="License_Plate" id="License_Plate"
+                            [(ngModel)]="parking.license_plate">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mobile-No:</label>
+                        <input class="form-control" type="text" name="Mobile-No" id="Mobile-No:"
+                            [(ngModel)]="parking.mobileNo">
+                    </div>
+
+                    <!-- <div  class="form-group">
+                        <label>Vehicle-Type</label>
+                        <input  class="form-control" type="text" name="Vehicle" id="Vehicle" >
+                    </div> -->
+
+                    &nbsp;
+                    <div class="form-group">
+                        <label>Vehicle-Type: - </label>
+                        <select name="Vehicle" id="Vehicle" [(ngModel)]="parking.vehicle_type">
+                            <option value="Bike">Bike</option>
+                            <option value="Car">Car</option>
+                            <option value="Auto">Auto</option>
+                        </select>
+                    </div>
+                    &nbsp;
+                    <div class="form-group">
+                        <label> Entry-Date:</label>
+                        <input class="form-control" type="datetime-local" name=" Entry-Date" id=" Entry-Date"
+                            [(ngModel)]="parking.entry_date">
+
+                    </div>
+
+                    <div class="form-group">
+                        <label> Ticket-Amount</label>
+                        <input class="form-control" type="number" name="Ticket-Amount" id="Ticket-Amount"
+                            [(ngModel)]="parking.ticket_amount">
+
+                    </div>
+
+                    <div class="form-group ">
+                        <input class="btn btn-success " type="submit" name="submit_reg" value="Subbmit"
+                            (click)="registerNow()">
+                    </div>
+
+                </fieldset>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+
+<button class="btn btn-success " type="submit" name="submit_reg" value="Subbmit" (click)="allrec()">All datils</button>
+
+<div class="background">
+    <h5>Search Parking By L-No!!!!</h5>
+    <div class="container">
+
+        <div class="row">
+            <div id="custom-search-input">
+                <div class="input-group col-md-12" style="text-align: center">
+                    <input type="text" class="search-query form-control" placeholder="Search With NAme " name="name" [(ngModel)]="name">
+
+                    <span class="input-group-btn">
+                        <button class="btn btn-danger" type="button" (click)="searchclick()">
+                        <span class=" glyphicon glyphicon-search"></span>
+                        search
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- class="table table-dark table-striped" -->
+        <table class="table  table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>license_plate</th>
+                    <th>mobileNo</th>
+                    <th>vehicle_type</th>
+                    <th>entry_date</th>
+                    <th>ticket_amount</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr *ngFor="let park of parkings | paginate: {itemsPerPage : 5 ,currentPage:p}">
+                    <td> {{park.id}} </td>
+                    <td> {{park.name}} </td>
+                    <td> {{park.license_plate}} </td>
+                    <td> {{park.mobileNo}} </td>
+                    <td> {{park.vehicle_type}} </td>
+                    <td> {{park.entry_date}} </td>
+                    <td> {{park.ticket_amount}} </td>
+                    <!-- <td> <button (click)="onClick(student.rollno)" class="btn btn-danger"><i class="material-icons">delete</i></button></td> -->
+
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button class="btn btn-warning " (click)="markOut(park.name)">CheckOut</button>
+                            <button class="btn btn-danger " (click)="delete(park.id)">delete</button>
+                            <!-- <button class="btn btn-info " (click)="update(park.id)">Update</button> -->
+                        </div>
+                    </td>
+                </tr>
+
+            </tbody>
+            <tfoot class="paganation">
+                <tr>
+                    <td colspan="5">
+                        <pagination-controls (pageChange)="p=$event"></pagination-controls>
+
+                    </td>
+                    <td><i class="fa fa-copyright" aria-hidden="true"></i></td>
+                </tr>
+            </tfoot>
+
+        </table>
+
+    </div>
+</div>

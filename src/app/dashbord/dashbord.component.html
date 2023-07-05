@@ -1,0 +1,61 @@
+<DIV class="background">
+    <div class="navebarheader">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <h3>Student Records</h3>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link"onclick="window.location.href = 'http://localhost:4200/register';">About</button>
+          
+              </li>
+  
+              <li class="nav-item">
+                <a class="nav-link ">Contact</a>
+              </li>
+             
+              <li ngbDropdown class="nav-item dropdown">
+                <a ngbDropdownToggle class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  All Records
+                </a>
+                <ul ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><button ngbDropdownItem class="dropdown-item" class="nav-link active" aria-current="page" (click)="serarchdelete('serach')">Datils-student</button></li>
+                  <li><button ngbDropdownItem class="dropdown-item" class="nav-link active" aria-current="page" (click)="register('register')">Registration-Student</button></li>
+                  <li><button ngbDropdownItem class="dropdown-item" class="nav-link active" aria-current="page" (click)="PArking('parking')">Parkings-Register</button></li>
+                  
+  
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+              </li>
+  
+  
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search All" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit"
+                onclick="window.location.href = 'http://localhost:4200/search';">Search</button>
+              <div>
+                <button class="btn btn-danger" (click)="logoutbtn()"> Logout </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+  
+  
+  
+  
+    <ng-container *ngComponentOutlet="comp"></ng-container>
+    <router-outlet></router-outlet>
+  
+  </DIV>
